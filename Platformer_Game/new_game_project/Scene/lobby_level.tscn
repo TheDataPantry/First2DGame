@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=4 uid="uid://bxnknkcguhk2i"]
+
+[ext_resource type="Texture2D" uid="uid://cjs83aletp7t2" path="res://Art/background/Background.png" id="1_mykcj"]
+[ext_resource type="Texture2D" uid="uid://bq8nrgg47gveo" path="res://Art/background/Bushes-16x16.png" id="2_1rxe2"]
+[ext_resource type="Texture2D" uid="uid://muxh53m8t238" path="res://Art/background/TileSet-36x36.png" id="3_sj305"]
+[ext_resource type="Texture2D" uid="uid://ug0vrstjjy2n" path="res://Art/background/House1.png" id="4_xcgdr"]
+[ext_resource type="Texture2D" uid="uid://cu7s11xu62ge7" path="res://Art/background/Tree1.png" id="5_21mg6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_se3ms"]
+texture = ExtResource("2_1rxe2")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+2:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w0x5y"]
+sources/0 = SubResource("TileSetAtlasSource_se3ms")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1761"]
+texture = ExtResource("3_sj305")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+6:3/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+0:0/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3sm7m"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_g1761")
+
+[node name="LobbyLevel" type="Node2D"]
+
+[node name="BackgroundSprites" type="StaticBody2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="BackgroundSprites"]
+position = Vector2(257, 283)
+scale = Vector2(1.67368, 1.412)
+texture = ExtResource("1_mykcj")
+
+[node name="BackgroundBushTileMap" type="TileMapLayer" parent="BackgroundSprites"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAHAA4AAAACAAQAAAAGAA4AAAACAAQAAAAFAA4AAAACAAQAAAAEAA4AAAACAAQAAAAIAA4AAAADAAQAAAAEAA8AAAACAAUAAAAEABAAAAACAAUAAAAEABEAAAACAAUAAAAIAA8AAAADAAYAAAAJAA8AAAACAAQAAAAKAA8AAAACAAQAAAAKABAAAAADAAUAAAAKABEAAAADAAUAAAAJABAAAAACAAUAAAAIABAAAAACAAUAAAAHABAAAAACAAUAAAAGABAAAAACAAUAAAAFABAAAAACAAUAAAAFAA8AAAACAAUAAAAGAA8AAAACAAUAAAAHAA8AAAACAAUAAAAJABEAAAACAAUAAAAIABEAAAACAAUAAAAHABEAAAACAAUAAAAGABEAAAACAAUAAAAFABEAAAACAAUAAAA=")
+tile_set = SubResource("TileSet_w0x5y")
+
+[node name="ForegroundBushTileMap" type="TileMapLayer" parent="BackgroundSprites"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAKABEAAAABAAIAAAALABAAAAADAAEAAAALABEAAAACAAEAAAALAA8AAAACAAEAAAAKABAAAAACAAEAAAAKAA8AAAABAAAAAAALAA4AAAADAAEAAAAMAA0AAAABAAAAAAANAA0AAAACAAAAAAAOAA0AAAADAAAAAAAOAA4AAAADAAEAAAAOAA8AAAADAAEAAAAOABAAAAADAAEAAAAOABEAAAACAAIAAAAPABEAAAADAAAAAAAJABEAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_w0x5y")
+
+[node name="GroundTileMap" type="TileMapLayer" parent="BackgroundSprites"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAADAAkAAAADAAEAAAAEAAkAAAADAAEAAAAFAAkAAAADAAEAAAAHAAkAAAADAAEAAAAGAAkAAAADAAEAAAAIAAkAAAADAAEAAAAJAAkAAAADAAEAAAAKAAkAAAADAAEAAAACAAkAAAADAAEAAAABAAkAAAADAAEAAAD//wkAAAADAAEAAAAAAAkAAAADAAEAAAD+/wkAAAABAAEAAAD//wgAAAAFAAEAAAAAAAgAAAAFAAEAAAAGAAgAAAAFAAEAAAAGAAcAAAAFAAEAAAD+/woAAAABAAIAAAD//woAAAACAAIAAAD//wsAAAADAAIAAAAAAAsAAAADAAIAAAABAAsAAAACAAIAAAABAAwAAAADAAIAAAACAAwAAAADAAIAAAADAAwAAAADAAIAAAAEAAwAAAACAAIAAAAFAAwAAAADAAIAAAAGAAwAAAADAAIAAAAHAAwAAAACAAIAAAAIAAwAAAADAAIAAAAIAAsAAAACAAIAAAAJAAsAAAACAAIAAAAJAAoAAAADAAIAAAAKAAoAAAAEAAIAAAAIAAoAAAADAAIAAAAHAAoAAAADAAIAAAAGAAoAAAACAAIAAAAFAAoAAAADAAIAAAAEAAoAAAADAAIAAAADAAoAAAADAAIAAAACAAoAAAADAAIAAAABAAoAAAACAAIAAAAAAAoAAAADAAIAAAAHAAsAAAADAAIAAAAGAAsAAAADAAIAAAAFAAsAAAACAAIAAAAEAAsAAAADAAIAAAADAAsAAAACAAIAAAACAAsAAAADAAIAAAD+/wsAAAABAAIAAAD+/wwAAAABAAMAAAD//wwAAAACAAIAAAAAAAwAAAADAAIAAAAJAAwAAAADAAIAAAAKAAwAAAAEAAIAAAAKAAsAAAAEAAIAAAAKAA0AAAAEAAIAAAAJAA0AAAADAAIAAAAIAA0AAAACAAIAAAA=")
+tile_set = SubResource("TileSet_3sm7m")
+
+[node name="House1" type="Sprite2D" parent="BackgroundSprites"]
+position = Vector2(65, 205)
+scale = Vector2(1.11364, 1)
+texture = ExtResource("4_xcgdr")
+
+[node name="Tree1" type="Sprite2D" parent="BackgroundSprites"]
+position = Vector2(0, 244)
+texture = ExtResource("5_21mg6")
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(302, 293, 352, 293, 352, 320, 349, 326, 348, 448, 489, 448, 489, 61, 603, 108, 603, 493, -127, 494, -92, 50, -48, 51, -26, 118, -55, 296)

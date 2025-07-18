@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://d1o4g5jgqv2vy"]
+[gd_scene load_steps=10 format=4 uid="uid://d1o4g5jgqv2vy"]
 
+[ext_resource type="Script" uid="uid://dlnowtdlrl4ce" path="res://Scene/stage_level.gd" id="1_fgwvk"]
 [ext_resource type="Texture2D" uid="uid://cjs83aletp7t2" path="res://Art/background/Background.png" id="1_rqfct"]
 [ext_resource type="Texture2D" uid="uid://muxh53m8t238" path="res://Art/background/TileSet-36x36.png" id="2_a00di"]
+[ext_resource type="PackedScene" uid="uid://dglqhkde5o0b4" path="res://Scene/player.tscn" id="3_a00di"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgwvk"]
 texture = ExtResource("2_a00di")
@@ -46,6 +48,7 @@ size = Vector2(33, 204.5)
 size = Vector2(99, 247)
 
 [node name="StageLevel" type="Node2D"]
+script = ExtResource("1_fgwvk")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(297, 100)
@@ -71,5 +74,11 @@ position = Vector2(-10, 111.75)
 shape = SubResource("RectangleShape2D_a00di")
 
 [node name="RightWallCollision" type="CollisionShape2D" parent="Collisions"]
-position = Vector2(649.5, 92.5)
+position = Vector2(657, 91)
 shape = SubResource("RectangleShape2D_fgwvk")
+
+[node name="Player" parent="." instance=ExtResource("3_a00di")]
+position = Vector2(283, 105)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(352, 258)
